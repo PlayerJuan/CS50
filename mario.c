@@ -1,48 +1,28 @@
-/** 
- *Title: 
- *
- *Programmer: Pietro Foglia 
- *
- *Program Purpose: 
- *
- *Last Updated: 
- */
- 
 #include <stdio.h>
 #include <cs50.h>
 
 int main(void)
 {
-    int height = 0;
+// INT
+    int intHeight = 0;
     
-    printf("Please enter a non-negative number which is no greater then 23: ");
     do
     {
-        if(height < 0 || height > 23)
-        {
-            printf("Retry: ");
-        }
-        height = GetInt();
+        printf("Height: ");
+        intHeight = GetInt();
     }
-    while(height < 0 || height > 23 );
-     
-    int maxLine = height + 1;
-    int hashCounter = maxLine;
-    
-    for(int i = 0; i < height; i++)
+    while(intHeight < 0 || intHeight > 23 );
+
+    for(int pyramidHeight = 0; pyramidHeight < intHeight; pyramidHeight++)
     {
-        for(int x = 0; x <= maxLine; x++)
+        for(int spaces = intHeight; spaces > pyramidHeight + 1; spaces = spaces - 1 )
         {
-            if(x > hashCounter - 2)
-            {
-                printf("#");  
-            }
-            else if(x < hashCounter - 2)
-            {
-                printf(" ");
-            }
+            printf(" ");
         }
-        hashCounter = hashCounter - 1;
-        printf("\n");
+        for(int levelWidth = 0; levelWidth < pyramidHeight + 1; levelWidth++ )
+        {
+            printf("#");
+        }
+        printf("#\n");
     }
 }
