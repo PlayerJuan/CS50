@@ -13,9 +13,9 @@ int main(void)
     }
     while(intHeight < 0 || intHeight > 23 );
 
-    for(int pyramidHeight = 0; pyramidHeight < intHeight; pyramidHeight++)
+    for(int pyramidHeight = 1; pyramidHeight < intHeight + 1; pyramidHeight++)
     {
-        for(int spaces = intHeight; spaces > pyramidHeight + 1; spaces = spaces - 1 )
+        for(int spaces = intHeight + 1; spaces > pyramidHeight + 1; spaces = spaces - 1 )
         {
             printf(" ");
         }
@@ -23,6 +23,6 @@ int main(void)
         {
             printf("#");
         }
-        printf("#\n");
+        printf("\n");
     }
 }
