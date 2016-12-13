@@ -1,2 +1,2 @@
 # CS50
-Cs50 Completed PSETS
+CS50 Completed PSETS
